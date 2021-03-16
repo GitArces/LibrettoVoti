@@ -15,6 +15,40 @@ public class Libretto {
 		this.voti.add(v);
 	}
 	
+	/* Metodi terribili
+	 * public void stampaVotiUguali (int punteggio) {
+		//Si stampa da solo i voti, metodo pigro
+		System.out.println();
+	}
+	
+	public String votiUguali (int punteggio) {
+		//calcola una stringa riutilizzabile
+		//cosa ci devo mettere? Solo il nome? Nome e voto?
+		
+	}*/
+	
+	public List<Voto> listaVotiUguali (int punteggio) {
+		//restituisce i voti uguali al criterio
+		List<Voto> risultato = new ArrayList<>();
+		for (Voto v : this.voti) {
+			if (v.getVoto()==punteggio)
+			risultato.add(v); //è lo stesso oggetto in ENTRAMBI i libretti, non una sua copia
+		}
+		return risultato;
+	}
+	
+	public Libretto votiUguali (int punteggio) {
+		//restituisce un libretto solo con i voti che vuoi
+		//il vantaggio è poter fare tutte le operazioni che faresti sul libretto completo
+		
+		Libretto risultato = new Libretto();
+		for (Voto v : this.voti) {
+			if (v.getVoto()==punteggio)
+			risultato.add(v);
+		}
+		return risultato;
+	}
+	
 	public String toString() {
 		String s = "";
 		for (Voto v : this.voti) {
